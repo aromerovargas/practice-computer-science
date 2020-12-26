@@ -1,6 +1,5 @@
 package sorting;
 
-import java.util.List;
 
 /**
  * Interface that defines a functionality to sort elements
@@ -9,7 +8,5 @@ import java.util.List;
 public interface Sort<T> {
 
   T[] sort(T[] element);
-
-  List<T> sort(List<T> list);
 
 }

@@ -9,15 +9,19 @@ class SortTest extends Specification {
 
         when:
         def sortedArray = sortAlgorithm.sort(data)
-        def sortedList = sortAlgorithm.sort(data.toList())
 
         then:
         expectedResult == sortedArray
-        expectedResult.toList() == sortedList
 
         where:
         sortAlgorithm   | data  | expectedResult
-        new BubbleSort()  | []   | []
+        new BubbleSort()  | [] | []
+        new BubbleSort()  | [2]   | [2]
+        new BubbleSort()  | [1,2,3]   | [1,2,3]
+        new BubbleSort()  | [1,2,3,4,5,6,7,8,9]   | [1,2,3,4,5,6,7,8,9]
+        new BubbleSort()  | [2,1]   | [1,2]
+        new BubbleSort()  | [3,2,1]   | [1,2,3]
+        new BubbleSort()  | [3,2,1,3]   | [1,2,3,3]
     }
 
 }
